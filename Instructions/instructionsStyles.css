@@ -1,0 +1,85 @@
+/* styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea;
+    color: #333;
+    
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: rgba(94, 37, 94, 0.5);
+    border-bottom: 3px solid rgba(94, 37, 94, 0.5);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+}
+
+img {
+    display: block;
+    margin: 0 auto 10px auto;
+    border: 3px solid rgba(94, 37, 94, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.container h1, .container h2, .container p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Contenedor para centrar el botón */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Centra el botón verticalmente (si es necesario) */
+    padding: 20px 0; /* Agrega un poco de espacio en la parte superior e inferior */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+a.options {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff; /* Cambia el color del texto según el contraste con el fondo */
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mejorar la legibilidad */
+    border-radius: 8px; /* Bordes redondeados para parecer un botón */
+    box-shadow: 0 4px 8px rgba(94, 37, 94, 0.5); /* Sombra para el efecto de botón */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+a.options:hover {
+    background-color: rgba(94, 37, 94, 0.9); /* Color más oscuro al pasar el ratón sobre el botón */
+    transform: scale(1.05); /* Aumenta el tamaño del botón al pasar el ratón */
+}

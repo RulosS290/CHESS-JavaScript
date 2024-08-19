@@ -1,36 +1,65 @@
-#gameboard {
-    width: 320px;
-    height: 320px;
-    display: flex;
-    flex-wrap: wrap;
+/* Estilo para el fondo de la página */
+body {
+    background-color: black; /* Fondo negro para la página */
+    color: white; /* Color de texto blanco para el contraste */
+    font-family: Arial, sans-serif; /* Fuente legible */
+    text-align: center; /* Centra el texto en la página */
+    display: flex; /* Usa Flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Usa el 100% de la altura de la ventana */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    position: relative; /* Necesario para el posicionamiento absoluto de los hijos */
 }
 
+/* Estilo para el título */
+h1 {
+    position: absolute; /* Posiciona el título de forma absoluta */
+    top: 140px; /* Ajusta el espaciado desde la parte superior de la ventana */
+    left: 47%; /* Centra el título horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición horizontalmente para centrar */
+    margin: 0; /* Elimina el margen predeterminado del título */
+}
+
+/* Ajusta el tamaño y la posición del tablero de ajedrez */
+#gameboard {
+    width: 600px; /* Tamaño aumentado del tablero */
+    height: 600px; /* Tamaño aumentado del tablero */
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black; /* Opcional: agrega un borde alrededor del tablero para destacarlo */
+    margin-top: 60px; /* Asegura que el tablero no esté demasiado cerca del título */
+}
+
+/* Ajusta el tamaño de las casillas */
 .square {
-    width: 40px;
-    height: 40px;
+    width: 75px; /* Tamaño aumentado de las casillas */
+    height: 75px; /* Tamaño aumentado de las casillas */
     position: relative;
 }
 
+/* Ajusta el tamaño y el margen de los elementos SVG dentro de las casillas */
 .square svg {
-    height: 30px;
-    width: 30px;
-    margin: 5px;
+    height: 60px; /* Tamaño aumentado de los elementos SVG */
+    width: 60px; /* Tamaño aumentado de los elementos SVG */
+    margin: 7px; /* Ajusta el margen si es necesario */
     position: relative;
     z-index: -9;
 }
 
+/* Asegúrate de que el contenido SVG esté por debajo de los otros elementos */
 path {
     position: relative;
     z-index: -10;
 }
 
+/* Asegúrate de que las piezas de ajedrez estén por encima de los otros elementos */
 .piece {
     position: relative;
     z-index: 9;
 }
 
-
-
+/* Colores para las casillas del tablero */
 .beige {
     background-color: rgb(110, 110, 98);
 }
@@ -39,10 +68,16 @@ path {
     background-color: rgb(169, 43, 43);
 }
 
+/* Colores para las piezas de ajedrez */
 .black {
     fill: rgb(17, 6, 6);
 }
 
 .white {
     fill: rgb(255, 255, 255);
+}
+
+
+p {
+    margin: 10px 0; /* Espaciado alrededor de los párrafos */
 }
