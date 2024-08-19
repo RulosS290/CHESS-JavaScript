@@ -348,14 +348,21 @@ function revertIds() {
 
 function checkForWin() {
     const kings = Array.from(document.querySelectorAll('#king'));
+    const winMessage = document.getElementById('win-message');
+    const winInfo = document.getElementById('win-info');
+    const winButton = document.getElementById('win-button');
 
     if (!kings.some(king => king.firstChild.classList.contains('white'))) {
-        infoDisplay.innerHTML = "Black Player Wins!";
+        winInfo.innerHTML = "Black Player Wins!";
+        winButton.href = "../index.html"; // Cambia la URL según sea necesario
+        winMessage.classList.remove('hidden');
         const allSquares = document.querySelectorAll('.square');
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false));
     }
     if (!kings.some(king => king.firstChild.classList.contains('black'))) {
-        infoDisplay.innerHTML = "White Player Wins!";
+        winInfo.innerHTML = "White Player Wins!";
+        winButton.href = "../index.html"; // Cambia la URL según sea necesario
+        winMessage.classList.remove('hidden');
         const allSquares = document.querySelectorAll('.square');
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false));
     }
