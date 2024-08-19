@@ -1,48 +1,51 @@
-#gameboard {
-    width: 320px;
-    height: 320px;
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Evita el scroll si la imagen es más grande que la ventana */
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.square {
-    width: 40px;
-    height: 40px;
-    position: relative;
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/chess.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(4px); /* Aplica el desenfoque solo a la imagen de fondo */
+    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
 }
 
-.square svg {
-    height: 30px;
-    width: 30px;
-    margin: 5px;
-    position: relative;
-    z-index: -9;
+h1 {
+    text-align: start;
+    color: #fff; /* Cambia el color del texto según el contraste con el fondo */
+    font-size: 3em;
+    margin-bottom: 50px;
 }
 
-path {
-    position: relative;
-    z-index: -10;
+a.options {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff; /* Cambia el color del texto según el contraste con el fondo */
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mejorar la legibilidad */
+    border-radius: 8px; /* Bordes redondeados para parecer un botón */
+    box-shadow: 0 4px 8px rgba(94, 37, 94, 0.5); /* Sombra para el efecto de botón */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.piece {
-    position: relative;
-    z-index: 9;
-}
-
-
-
-.beige {
-    background-color: rgb(110, 110, 98);
-}
-
-.brown {
-    background-color: rgb(169, 43, 43);
-}
-
-.black {
-    fill: rgb(17, 6, 6);
-}
-
-.white {
-    fill: rgb(255, 255, 255);
+a.options:hover {
+    background-color: rgba(70, 12, 70, 0.9); /* Cambia el color del fondo en hover */
+    transform: scale(1.05); /* Escala el botón ligeramente en hover */
 }
