@@ -4,8 +4,8 @@ const infoDisplay = document.querySelector("#info-display");
 const err = document.querySelector("#err");
 const width = 8
 
-let playerTurn = 'black';
-playerDetails.textContent = 'black'
+let playerTurn = 'white';
+playerDetails.textContent = 'white'
 
 const startPieces = [
     rook, knight, bishop, queen, king, bishop, knight, rook,
@@ -36,10 +36,10 @@ function createBoard() {
         }
 
         if (i <= 15) {
-            square.firstChild.firstChild.classList.add("black");
+            square.firstChild.firstChild.classList.add("white");
         }
         if (i >= 48) {
-            square.firstChild.firstChild.classList.add("white");
+            square.firstChild.firstChild.classList.add("black");
         }
 
 
@@ -81,7 +81,7 @@ function dragdrop(e) {
     const correctTurn = draggedElement.firstChild.classList.contains(playerTurn);
     const taken = e.target.classList.contains('piece');
     const valid = checkIfValid(e.target);
-    const opponentTurn = playerTurn === 'white' ? 'black' : 'white';
+    const opponentTurn = playerTurn === 'black' ? 'white' : 'black';
     const takenByOpponent = e.target.firstChild?.classList.contains(opponentTurn);
     // console.log('opp go', opponentTurn)
 
@@ -325,14 +325,14 @@ function checkIfValid(target) {
 
 
 function changePlayer() {
-    if (playerTurn === 'black') {
+    if (playerTurn === 'white') {
         reverseIds()
-        playerTurn = 'white';
-        playerDetails.textContent = 'white'
+        playerTurn = 'black';
+        playerDetails.textContent = 'black'
     } else {
         revertIds();
-        playerTurn = 'black'
-        playerDetails.textContent = 'black'
+        playerTurn = 'white'
+        playerDetails.textContent = 'white'
     }
 }
 
@@ -353,13 +353,13 @@ function revertIds() {
 function checkForWin() {
     const kings = Array.from(document.querySelectorAll('#king'));
 
-    if (!kings.some(king => king.firstChild.classList.contains('white'))) {
-        infoDisplay.innerHTML = "Black Player Wins!";
+    if (!kings.some(king => king.firstChild.classList.contains('black'))) {
+        infoDisplay.innerHTML = "White Player Wins!";
         const allSquares = document.querySelectorAll('.square');
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false));
     }
-    if (!kings.some(king => king.firstChild.classList.contains('black'))) {
-        infoDisplay.innerHTML = "White Player Wins!";
+    if (!kings.some(king => king.firstChild.classList.contains('white'))) {
+        infoDisplay.innerHTML = "Black Player Wins!";
         const allSquares = document.querySelectorAll('.square');
         allSquares.forEach(square => square.firstChild?.setAttribute('draggable', false));
     }
