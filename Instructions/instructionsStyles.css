@@ -56,30 +56,29 @@ p {
     margin-right: 10px;
 }
 
-/* Contenedor para centrar el botón */
 .button-container {
     display: flex;
-    justify-content: center; /* Centra el botón horizontalmente */
-    align-items: center; /* Centra el botón verticalmente (si es necesario) */
-    padding: 20px 0; /* Agrega un poco de espacio en la parte superior e inferior */
-    margin: 0; /* Elimina el margen por defecto */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0;
 }
 
 a.options {
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    color: #fff; /* Cambia el color del texto según el contraste con el fondo */
+    color: #fff;
     font-size: 1.2em;
     margin: 10px;
     padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mejorar la legibilidad */
-    border-radius: 8px; /* Bordes redondeados para parecer un botón */
-    box-shadow: 0 4px 8px rgba(94, 37, 94, 0.5); /* Sombra para el efecto de botón */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(94, 37, 94, 0.5);
     transition: background-color 0.3s, transform 0.3s;
 }
 
 a.options:hover {
-    background-color: rgba(94, 37, 94, 0.9); /* Color más oscuro al pasar el ratón sobre el botón */
-    transform: scale(1.05); /* Aumenta el tamaño del botón al pasar el ratón */
+    background-color: rgba(94, 37, 94, 0.9);
+    transform: scale(1.05);
 }
