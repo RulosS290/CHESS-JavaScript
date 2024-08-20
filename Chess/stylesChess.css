@@ -1,0 +1,133 @@
+body {
+    background-color: rgb(29, 14, 31);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 140px;
+    left: 47%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+#gameboard {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    margin-top: 60px;
+}
+
+.square {
+    width: 75px;
+    height: 75px;
+    position: relative;
+}
+
+.square svg {
+    height: 60px;
+    width: 60px;
+    margin: 7px;
+    position: relative;
+    z-index: -9;
+}
+
+path {
+    position: relative;
+    z-index: -10;
+}
+
+.piece {
+    position: relative;
+    z-index: 9;
+}
+
+.beige {
+    background-color: rgb(110, 110, 98);
+}
+
+.brown {
+    background-color: rgb(169, 43, 43);
+}
+
+.black {
+    fill: rgb(17, 6, 6);
+}
+
+.white {
+    fill: rgb(255, 255, 255);
+}
+
+
+p {
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#win-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(94, 37, 94, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#win-button:hover {
+    background-color: rgba(94, 37, 94, 0.9);
+    transform: scale(1.05);
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container a.options {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(94, 37, 94, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-container a.options:hover {
+    background-color: rgba(94, 37, 94, 0.9);
+    transform: scale(1.05);
+}
