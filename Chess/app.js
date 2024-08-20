@@ -116,26 +116,34 @@ function checkIfValid(target) {
     switch (piece) {
         case 'pawn':
             const starterRow = [8, 9, 10, 11, 12, 13, 14, 15];
-            if (starterRow.includes(startId) && startId + width * 2 === targetId ||
-                startId + width === targetId ||
-                startId + width - 1 === targetId && document.querySelector(`[square-id = "${startId + width - 1}"]`).firstChild ||
-                startId + width + 1 === targetId && document.querySelector(`[square-id = "${startId + width + 1}"]`).firstChild) {
+            const isInitialMove = starterRow.includes(startId);
+            const isDoubleMove = isInitialMove && startId + width * 2 === targetId;
+            const isSingleMove = startId + width === targetId;
+            const isCaptureLeft = startId + width - 1 === targetId && document.querySelector(`[square-id = "${targetId}"]`).firstChild;
+            const isCaptureRight = startId + width + 1 === targetId && document.querySelector(`[square-id = "${targetId}"]`).firstChild;
+    
+            // Movimiento inicial del peón (2 casillas hacia adelante)
+            if (isDoubleMove) {
+                // Asegura que no haya piezas en ambas casillas
+                if (!document.querySelector(`[square-id = "${startId + width}"]`).firstChild &&
+                    !document.querySelector(`[square-id = "${targetId}"]`).firstChild) {
+                    return true;
+                }
+            }
+    
+            // Movimiento simple (1 casilla hacia adelante)
+            if (isSingleMove) {
+                // Asegura que la casilla de destino esté vacía
+                if (!document.querySelector(`[square-id = "${targetId}"]`).firstChild) {
+                    return true;
+                }
+            }
+    
+            // Captura en diagonal
+            if (isCaptureLeft || isCaptureRight) {
                 return true;
             }
-            break;
-        case 'knight':
-            if (
-                startId + width * 2 + 1 === targetId ||
-                startId + width * 2 - 1 === targetId ||
-                startId + width - 2 === targetId ||
-                startId + width + 2 === targetId ||
-                startId - width * 2 + 1 === targetId ||
-                startId - width * 2 - 1 === targetId ||
-                startId - width + 2 === targetId ||
-                startId - width - 2 === targetId
-            ) {
-                return true
-            }
+    
             break;
 
         case 'bishop':
